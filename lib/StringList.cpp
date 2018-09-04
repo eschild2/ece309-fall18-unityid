@@ -47,7 +47,7 @@ listOfStrings::listOfStrings(){
 
 bool listOfStrings::remove(char* a){
   if(!empty()){
-    a = head->getNext();
+    a = head->getStr();
     ListNode *tmp = head->getNext();
     delete head;
     head = tmp;
