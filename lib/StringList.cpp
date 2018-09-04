@@ -102,7 +102,7 @@ char* listOfStrings::remove_front(){
 
 //destructor
 listOfStrings::~listOfStrings(){
-  char* t;
+  ListNode* t;
   while(!(head == 0 && tail == 0)){
     remove(t);
   }
