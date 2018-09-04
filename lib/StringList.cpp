@@ -123,7 +123,7 @@ char* listOfStrings::remove_front(){
 listOfStrings::~listOfStrings(){
   while(!(empty())){
     ListNode* next = head->getNext();
-    remove(head);
+    remove(head->getStr());
     head = next;
   }
 }
