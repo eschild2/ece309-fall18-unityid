@@ -78,7 +78,6 @@ char* listOfStrings::get(int n){
 
 
 int listOfStrings::length(){
-  ListNode* temp = head;
   int n = 0;
   while(head != 0){
     n++;
@@ -103,7 +102,7 @@ char* listOfStrings::remove_front(){
 //destructor
 listOfStrings::~listOfStrings(){
   char* t;
-  while(!empty()){
+  while(!(head==0 && tail==0)){
     remove(t);
   }
 }
