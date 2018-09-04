@@ -122,7 +122,9 @@ char* listOfStrings::remove_front(){
 //destructor
 listOfStrings::~listOfStrings(){
   while(!(empty())){
-    remove(str);
+    ListNode* next = head->getNext();
+    remove(head);
+    head = next;
   }
 }
   
