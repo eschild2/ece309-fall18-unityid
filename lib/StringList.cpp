@@ -31,7 +31,7 @@ class listOfStrings{
   public: 
     listOfStrings();
     bool remove(char* a);
-    bool empty()
+    bool empty();
     void push_back(char* a);
     char* get(int n);
     int length();
@@ -45,7 +45,7 @@ listOfStrings::listOfStrings(){
   tail = 0;
 }
 
-bool List::remove(char* a){
+bool listOfStrings::remove(char* a){
   if(!empty()){
     a = head->getNext();
     ListNode *tmp = head->getNext();
@@ -121,7 +121,7 @@ char* listOfStrings::remove_front(){
 
 //destructor
 listOfStrings::~listOfStrings(){
-  ListNode* t;
+  char* t;
   while(!(empty())){
     remove(t);
   }
