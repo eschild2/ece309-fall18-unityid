@@ -121,9 +121,8 @@ char* listOfStrings::remove_front(){
 
 //destructor
 listOfStrings::~listOfStrings(){
-  char* t;
   while(!(empty())){
-    remove(t);
+    remove(str);
   }
 }
   
