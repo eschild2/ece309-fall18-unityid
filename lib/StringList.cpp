@@ -30,6 +30,8 @@ class listOfStrings{
     ListNode *tail;
   public: 
     listOfStrings();
+    bool remove(char* a);
+    bool empty()
     void push_back(char* a);
     char* get(int n);
     int length();
@@ -43,6 +45,19 @@ listOfStrings::listOfStrings(){
   tail = 0;
 }
 
+bool List::remove(char* a){
+  if(!empty()){
+    a = head->getNext();
+    ListNode *tmp = head->getNext();
+    delete head;
+    head = tmp;
+    if(tmp == NULL)
+      tail = NULL;
+    return true;
+  }
+  return false;
+}
+
 // allows you to add another string to the list
 void listOfStrings::push_back(char* p){
   ListNode *node = new ListNode(p);
@@ -54,6 +69,10 @@ void listOfStrings::push_back(char* p){
     tail->setNext(node);
     tail = node;
   }
+}
+
+bool listOfStrings::empty(){
+  return head==NULL;
 }
 
 // returns the string at the nth term on the list
@@ -103,7 +122,7 @@ char* listOfStrings::remove_front(){
 //destructor
 listOfStrings::~listOfStrings(){
   ListNode* t;
-  while(!(head == 0 && tail == 0)){
+  while(!(empty())){
     remove(t);
   }
 }
