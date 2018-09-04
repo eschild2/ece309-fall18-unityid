@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <list.h>
 
 // class for a list node
 class ListNode{
@@ -102,7 +103,7 @@ char* listOfStrings::remove_front(){
 //destructor
 listOfStrings::~listOfStrings(){
   char* t;
-  while(!(head==0 && tail==0)){
+  while(!empty()){
     remove(t);
   }
 }
