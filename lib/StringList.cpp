@@ -106,4 +106,5 @@ listOfStrings::~listOfStrings(){
   while(!empty()){
     remove(t);
   }
+}
   
