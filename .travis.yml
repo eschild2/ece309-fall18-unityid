@@ -8,4 +8,5 @@ compiler:
   - clang
   - gcc
 
-script: make all && make run
+script: 
+  - make all && make run
