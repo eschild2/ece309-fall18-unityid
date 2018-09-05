@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 
 // class for a list node
@@ -77,11 +78,11 @@ bool listOfStrings::empty(){
 
 // returns the string at the nth term on the list
 char* listOfStrings::get(int n){
-  int x = 0;
+  int x = 1;
   ListNode* temp1;
-  ListNode* temp2;
+  ListNode* temp2 = head;
   while(x != n){
-    if(x == 0){
+    if(x == 1){
       temp1 = head;
       temp2 = head->getNext();
       x++;
@@ -99,8 +100,10 @@ char* listOfStrings::get(int n){
 
 int listOfStrings::length(){
   int n = 0;
-  while(head != 0){
+  ListNode* temp1 = head;
+  while(temp1 != 0){
     n++;
+    temp1 = temp1->getNext();
   }
   return n;
 }
@@ -127,4 +130,4 @@ listOfStrings::~listOfStrings(){
     head = next;
   }
 }
-  
+
